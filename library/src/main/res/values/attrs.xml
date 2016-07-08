@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ProportionView">
+        <attr name="widthWeight" format="reference|integer"/>
+        <attr name="heightWeight" format="reference|integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="ForegroundFrameLayout">
+        <attr name="android:foreground" />
+        <attr name="android:foregroundInsidePadding" />
+        <attr name="android:foregroundGravity" />
+    </declare-styleable>
+</resources>
