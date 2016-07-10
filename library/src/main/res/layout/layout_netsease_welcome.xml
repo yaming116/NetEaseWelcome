@@ -23,13 +23,15 @@
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:minWidth="32sp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:text="@string/netease_welcome_skip"
         android:background="@drawable/btn_netease_welcome_skip"
         android:textColor="@android:color/white"
         android:layout_gravity="top|right"
         android:layout_margin="32dp"/>
+
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -43,5 +45,10 @@
             android:layout_height="wrap_content"/>
 
     </FrameLayout>
+
+    <me.shenfan.netease.progress.NewEaseProgress
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"/>
 
 </FrameLayout>

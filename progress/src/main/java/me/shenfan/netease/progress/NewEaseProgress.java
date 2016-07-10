@@ -51,9 +51,21 @@ public class NewEaseProgress extends View {
     private void init(Context context, AttributeSet attrs){
         mCirclePaint = new Paint();
         mCirclePaint.setFlags(Paint.ANTI_ALIAS_FLAG);
-        mCirclePaint.setStyle(Paint.Style.STROKE);
+        mCirclePaint.setStyle(Paint.Style.FILL);
         mCirclePaint.setColor(Color.RED);
         mCirclePaint.setStrokeWidth(2);
+        mCirclePaint.setAntiAlias(true);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+//         if (getMeasuredWidth() > getHeight()){
+//             mWidth = getMeasuredHeight();
+//         }else {
+//             mWidth = getMeasuredWidth();
+//         }
     }
 
 
@@ -61,22 +73,25 @@ public class NewEaseProgress extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        mCenterX = w / 2f;
-        mCenterY = h / 2f;
-        mPaddingX = w / 2f - mRadius;
-        mPaddingY = h / 2f - mRadius;
-
-        mCircleBounds = new RectF();
-        mCircleBounds.top = mPaddingY;
-        mCircleBounds.left = mPaddingX;
-        mCircleBounds.bottom = h / 2f + mRadius;
-        mCircleBounds.right = w / 2f + mRadius;
+        if (mCircleBounds == null){
+            mCircleBounds = new RectF();
+        }
+        mCircleBounds.top = 4;
+        mCircleBounds.left = 4;
+        mCircleBounds.bottom = h - 4;
+        mCircleBounds.right = w - 4;
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawCircle(mCircleBounds.centerX(), mCircleBounds.centerY(), 30, mCirclePaint);
+
+//        canvas.drawCircle(mCircleBounds.centerX(), mCircleBounds.centerY(),
+//                mCircleBounds.width() / 2, mCirclePaint);
+
+        canvas.drawArc(mCircleBounds, 0, 270, false, mCirclePaint);
+
+//        canvas.drawt
     }
 }
